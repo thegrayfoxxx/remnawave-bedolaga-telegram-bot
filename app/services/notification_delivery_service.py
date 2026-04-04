@@ -323,9 +323,7 @@ class NotificationDeliveryService:
                 template = self.email_templates.get_template(notification_type, language, context)
 
             if not template:
-                logger.warning(
-                    'Не найден email шаблон для', notification_type_value=notification_type.value
-                )
+                logger.warning('Не найден email шаблон для', notification_type_value=notification_type.value)
                 return False
 
             # Send email (sync smtplib — run in thread to avoid blocking event loop)
