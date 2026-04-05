@@ -195,7 +195,7 @@ class NotificationDeliveryService:
             success_channels = []
             failed_channels = []
 
-            for result, channel_name in zip(results, channel_names):
+            for result, channel_name in zip(results, channel_names, strict=True):
                 if result is True:
                     success_channels.append(channel_name)
                 else:
